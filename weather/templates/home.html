@@ -44,6 +44,15 @@
     </style>
 </head>
 <body>
+    <div class="text-end p-3">
+    {% if user.is_authenticated %}
+        Xin chào, {{ user.username }} |
+        <a href="{% url 'logout' %}" class="btn btn-light btn-sm">Đăng xuất</a>
+    {% else %}
+        <a href="{% url 'login' %}" class="btn btn-light btn-sm">Đăng nhập</a>
+        <a href="{% url 'register' %}" class="btn btn-light btn-sm">Đăng ký</a>
+    {% endif %}
+</div>
 
 <div class="container">
 
